@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">OrbiGo</string>
+    <string name="emailInput">Email Address</string>
+    <string name="passwordInput">Password</string>
+    <string name="phoneInput">Phone number</string>
+    <string name="createAccount">Create account</string>
+    <string name="login">Login</string>
+    <string name="loginFB">Log In with facebook</string>
+    <string name="signupFB">Sign up with facebook</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="explore">Explore</string>
+    <string name="remove">Remove</string>
+    <string name="tvt_prompt">Enable tourist mode</string>
+    <string name="bto_prompt">Enable business mode</string>
+    <string name="facebook_app_id">1638720049514345</string>
+    <string name="fb_login_protocol_scheme">fb1638720049514345</string>
+    <string name="find_a_place">Find a place</string>
+    <string name="sign_up">Sign up</string>
+    <string name="log_in">Log in</string>
+    <string name="start_new_journey">Start New Journey</string>
+    <string name="where_will_your_next_adventure_be">Where will your next adventure be?</string>
+    <string name="looking_for_an_attraction">Looking for an attraction?</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="continue_with_facebook">Continue with facebook</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="title_activity_btobottom_nav">BTOBottomNavActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_nearby_poi">NearbyPoiActivity</string>
+    <string name="title_activity_route_map">Trip Route</string>
+    <string name="geofence_transition_invalid_type">invalid geo trans</string>
+</resources>

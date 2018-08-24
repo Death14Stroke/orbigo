@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "714638914453",
+    "firebase_url": "https://orbigo-2.firebaseio.com",
+    "project_id": "orbigo-2",
+    "storage_bucket": "orbigo-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714638914453:android:c3f748277b607647",
+        "android_client_info": {
+          "package_name": "com.ds14.darren.orbigo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714638914453-tue2ebj9fvkl3sc4o9afu202hla2rjs4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ds14.darren.orbigo",
+            "certificate_hash": "b495157706f9038ee33c285d1d40e00b3dfabf45"
+          }
+        },
+        {
+          "client_id": "714638914453-4vjnjj0n6rueeqm6kqh344a6dhjd7knh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ds14.darren.orbigo",
+            "certificate_hash": "30095df77e9fee1780f70a28b32198810b5b082e"
+          }
+        },
+        {
+          "client_id": "714638914453-qh0mifng5hkhdlkkjkhphid12g4ffm34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLC3FQQ7Mak6u5Iw7k4I0uAElnZSjtRFY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714638914453-qh0mifng5hkhdlkkjkhphid12g4ffm34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

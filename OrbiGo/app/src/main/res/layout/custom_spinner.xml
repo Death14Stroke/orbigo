@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_person"
+        android:id="@+id/business_img" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20.8sp"
+            android:layout_marginStart="10dp"
+            android:textColor="#000000"
+            android:id="@+id/spinner_bname"
+            android:lineSpacingExtra="-2.5sp"
+            android:text="Mr. Wong Restaurant"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17.3sp"
+            android:id="@+id/spinner_address"
+            android:textColor="#959595"
+            android:lineSpacingExtra="5sp"
+            android:layout_marginStart="10dp"
+            android:text="23 ave walk of fame, Sydney "
+            />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ListBusinessActivity">
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:lineSpacingExtra="-16.5sp"
+        android:text="List your business" />
+
+    <EditText
+        android:layout_marginTop="25dp"
+        android:id="@+id/ABN"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your ABN"
+        />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/Business_ph"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your business phone number"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/Business_email"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Enter your business email(optional)" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/business_name"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Enter business name" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/business_address"
+        android:inputType="textPostalAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Enter business address" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/register_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#fff"
+        android:padding="15dp"
+        android:text="Register your Business"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_border"/>
+</LinearLayout>

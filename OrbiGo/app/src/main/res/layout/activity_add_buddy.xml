@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddBuddyActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Travel buddy"
+        android:textColor="#000"
+        android:id="@+id/travelBuddyText"
+        android:textStyle="bold"
+        android:textSize="23sp"
+        android:layout_margin="10dp"
+        android:padding="3dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sync contact"
+        android:textColor="#02b8d0"
+        android:id="@+id/contact_btn"
+        android:layout_margin="10dp"
+        android:textAllCaps="false"
+        android:layout_alignParentEnd="true"
+        style="?borderlessButtonStyle" />
+    <EditText
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:padding="10dp"
+        android:layout_below="@id/travelBuddyText"
+        android:id="@+id/buddy_name"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:hint="Full name"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:layout_below="@id/buddy_name"
+        android:id="@+id/buddy_email"
+        android:inputType="textEmailAddress"
+        android:hint="Email"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:layout_below="@id/buddy_email"
+        android:id="@+id/buddy_phone"
+        android:layout_margin="15dp"
+        android:hint="Phone number(optional)"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Guest"
+        android:layout_marginTop="10dp"
+        android:id="@+id/buddy_add_btn"
+        android:layout_below="@id/buddy_phone"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_border"
+        android:textColor="#fff"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:weightSum="10"
+    android:layout_height="wrap_content">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:id="@+id/member_image"
+        android:layout_weight="1"
+        android:src="@drawable/ic_launcher_background"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:id="@+id/member_name"
+        android:textSize="20sp"
+        android:layout_weight="8"
+        android:layout_gravity="center_vertical"
+        android:text="Dennis rodman"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_border"
+        android:text="You"
+        android:id="@+id/member_role"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:layout_marginEnd="15dp"
+        android:layout_weight="1"
+        android:textColor="#02b8d0"
+        android:layout_gravity="center_vertical"
+        android:textAllCaps="true"/>
+</LinearLayout>
