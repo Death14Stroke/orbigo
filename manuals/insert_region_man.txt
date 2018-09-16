@@ -1,0 +1,1 @@
+Run the script ./insert_region.sh with parameters (regioncode, from_level, to_level, filename of .zip)

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://atlas.atdw-online.com.au/embed/widget/5b10fce315b41d8a15236314"></script>
+</head>
+<body>
+    <h1>Server</h1>
+    <script>
+        var array = atdwWidgetProductData;
+        alert(array.length);
+        var url2 = "http://34.235.112.213/orbigo2/php-web/ATDW/insert_to_dbase";
+        array.forEach(element => {
+            var send={};
+            var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+element['productName']+element['productAddress']+"&key=AIzaSyDu2jU3yJD-mzzTDE2KkDg0YTHzEOU1qkI";
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function(result){
+                    if(result['status']=='OK'){
+                        var location = JSON.stringify(result['results'][0]['geometry']['location']);
+                        send['location']=location;
+                    }
+                    send['poi_id']=element['productId'];
+                    send['poi_address']=element['productAddress'];
+                    send['poi_name']=element['productName'];
+                    send['poi_picture']=element['productPict'];
+                    send['category']=element['productCategory'];
+                    send['description']=element['productDesc'];
+                    send['eventdate']=element['productEventDate'];
+                    send['phone_number']=element['productPhone'];
+                    send['url']=element['productUrl'];
+                    var d = JSON.stringify(send);
+                    $.ajax({
+                        type: "POST",
+                        url: url2,
+                        data: d,
+                        success: function(result){
+                            console.log('entry done in db');
+                        }
+                    })
+                }
+            })
+        });     
+    </script>
+</body>
+</html>

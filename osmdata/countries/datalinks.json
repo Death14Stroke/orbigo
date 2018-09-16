@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "file": "http://34.235.112.213/orbigo2/osmdata/countries/Australia_AL2.GeoJson",
+      "image": "http://34.235.112.213/orbigo2/images/australia.png"
+    },
+    {
+      "file": "http://34.235.112.213/orbigo2/osmdata/countries/India_AL2.GeoJson",
+      "image": "http://34.235.112.213/orbigo2/images/india.png"
+    }
+  ]
+}
