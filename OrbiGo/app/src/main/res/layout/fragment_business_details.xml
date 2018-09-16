@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context="com.orbigo.fragments.BusinessFragment">
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:fontFamily="@font/galano_grotesque"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="-7.5sp"
+            android:text="@string/business"
+            android:textColor="#000000"
+            android:textSize="18sp"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/businessCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_weight="0.2"
+            android:fontFamily="@font/galano_grotesque"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="-7.5sp"
+            android:textColor="#8e6ef9"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="right"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="3.3sp"
+            android:text="@string/busines_edit"
+            android:textColor="#02b8d0"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/title"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#b7b7b7" />
+
+
+    <TextView
+        android:id="@+id/newBusinessBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/galano_grotesque"
+        android:padding="5dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="@string/business_list_new_business"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#04c4d7"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+android:layout_above="@+id/newBusinessBtn"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_border"
+        android:fontFamily="@font/galano_grotesque"
+        android:text="@string/business_cvv_update"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/update"
+        android:layout_below="@+id/view4">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/businessProfilePic"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_switch_to_business"
+                    app:civ_border_color="#ebebeb"
+                    app:civ_border_width="2dp"
+                    app:civ_fill_color="#ebebeb"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="10"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/NameOfBusiness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:padding="5dp"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        tools:text="Mr. Wong Restaurant" />
+
+                    <TextView
+                        android:id="@+id/SubNameOfBusiness"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:padding="5dp"
+                        android:textColor="@color/warm_grey"
+                        android:textSize="16sp"
+                        tools:text="23 ave walk of fame, Sydney " />
+
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/right"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_down" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_centerVertical="true"
+                    android:background="#b7b7b7" />
+
+
+                <ImageView
+                    android:id="@+id/business_camera"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="-45dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="-30dp"
+
+                    android:src="@drawable/ic_camera" />
+
+
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/moreDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="2.5sp"
+                        android:text="@string/business_cvv_business_field"
+                        android:textColor="#898989"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_b_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#b7b7b7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:lineSpacingExtra="2.5sp"
+                    android:text="@string/business_cvv_description"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/Description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:hint="@string/business_cvv_enter_a_desc"
+                    android:textColor="@color/warm_grey"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="5dp"
+                    android:background="#b7b7b7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="2.5sp"
+                    android:text="@string/business_cvv_price"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/galano_grotesque"
+                            android:lineSpacingExtra="9sp"
+                            android:text="@string/business_cvv_from"
+                            android:textColor="#959595"
+                            android:textSize="12sp" />
+
+                        <!--android:drawableStart="@drawable/ic_dollar"-->
+                        <EditText
+                            android:id="@+id/start_price"
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bg_white_shadow"
+
+                            android:fontFamily="@font/galano_grotesque"
+                            android:gravity="center"
+
+                            android:hint="$10"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/galano_grotesque"
+                            android:lineSpacingExtra="9sp"
+                            android:text="@string/business_cvv_to"
+                            android:textAlignment="textStart"
+                            android:textColor="#959595"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/end_price"
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bg_white_shadow"
+                            android:fontFamily="@font/galano_grotesque"
+                            android:gravity="center"
+                            android:hint="$0"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#9ab7b7b7" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+
+
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:padding="5dp"
+                        android:text="@string/business_cvv_capacity"
+                        android:textColor="#010101"
+                        android:textSize="18sp" />
+
+                    <!--  <SeekBar
+                          android:id="@+id/progressBar"
+                          style="?android:attr/progressBarStyleHorizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="45dp"
+                          android:layout_marginEnd="10dp"
+                          android:layout_marginStart="10dp"
+                          android:layout_marginTop="20dp"
+                          android:progress="10"
+                          android:progressBackgroundTint="#e1e1e1"
+                          android:progressTint="@color/aqua"
+                          android:thumbTint="#52000000"
+                          />
+          -->
+
+
+                    <TextView
+
+                        android:id="@+id/seekbar_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="20dip"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:paddingLeft="8dip"
+                        android:paddingRight="8dip"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <SeekBar
+                        android:id="@+id/PP_Player_SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:maxHeight="11dip"
+                        android:minHeight="11dip"
+                        android:paddingLeft="8dip"
+                        android:paddingRight="8dip"
+                        android:progress="0"
+                        android:progressBackgroundTint="#e1e1e1"
+                        android:progressTint="@color/aqua"
+
+
+                        android:thumbTint="#52e2e2e2"
+                        android:visibility="visible" />
+
+
+                    <EditText
+                        android:id="@+id/capacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:hint="@string/business_cvv_number_of_people"
+                        android:inputType="number"
+                        android:padding="5dp"
+                        android:textColor="#010101"
+                        android:textSize="18.8sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#b7b7b7" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

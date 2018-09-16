@@ -13,19 +13,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <ImageView
-           android:layout_marginStart="10dp"
+
             android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"
+            android:layout_width="36dp"
+            android:layout_gravity="center"
+            android:layout_height="36dp"
             android:id="@+id/card_imageview"
             app:srcCompat="@drawable/ic_launcher_background"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Move"
+            android:fontFamily="@font/galano_grotesque"
             android:textSize="10dp"
-            android:textColor="#4842f4"
+            android:textColor="@color/grey"
             android:padding="10dp"
             android:layout_gravity="center"
             android:id="@+id/card_textview"

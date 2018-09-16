@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000"
+        android:fontFamily="@font/galano_grotesque"
         android:textStyle="bold"
         android:id="@+id/member_name"
         android:textSize="20sp"
@@ -26,12 +27,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/textview_border"
         android:text="You"
+        android:fontFamily="@font/galano_grotesque"
         android:id="@+id/member_role"
         android:padding="10dp"
         android:textAlignment="center"
         android:layout_marginEnd="15dp"
         android:layout_weight="1"
-        android:textColor="#02b8d0"
+        android:textColor="#01bcb4"
         android:layout_gravity="center_vertical"
         android:textAllCaps="true"/>
 </LinearLayout>

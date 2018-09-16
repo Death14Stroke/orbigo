@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SplashBusinessActivity">
+    tools:context="com.orbigo.activities.SplashBusinessActivity">
     <ImageView
+        android:id="@+id/logo_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/business_splash"/>
-    <LinearLayout
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/logo"
+        android:visibility="visible"
+
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/logo_image"
+        android:layout_marginBottom="31dp"
+        android:indeterminate="true"
+        android:visibility="visible" />
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_gravity="bottom"
@@ -30,5 +43,5 @@
             android:textColor="#0f1049"
             android:textStyle="bold"
             android:text="Loading your businesses..."/>
-    </LinearLayout>
-</FrameLayout>
+    </LinearLayout>-->
+</RelativeLayout>

@@ -1,344 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.sothree.slidinguppanel.SlidingUpPanelLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:sothree="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/sliding_layout"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="bottom"
-    sothree:umanoPanelHeight="68dp"
-    sothree:umanoShadowHeight="4dp"
-    sothree:umanoParallaxOffset="100dp"
-    sothree:umanoDragView="@+id/dragView"
-    sothree:umanoOverlay="true"
-    sothree:umanoScrollableView="@+id/list">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <!-- MAIN CONTENT -->
     <LinearLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:focusable="true"
-        android:orientation="vertical">
-        <FrameLayout android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-            <com.ds14.darren.orbigo.custom_ui_components.DelayAutoCompleteTextView
-                android:id="@+id/maps_search_places"
-                android:inputType="textCapSentences"
-                android:layout_width="match_parent"
-                android:focusable="true"
-                android:drawableStart="@drawable/search_ic"
-                android:layout_height="wrap_content"
-                android:hint="Enter a place"
-                android:imeOptions="flagNoExtractUi|actionSearch"/>
-            <ProgressBar
-                android:id="@+id/pb_loading_indicator"
-                style="?android:attr/progressBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end"
-                android:layout_marginEnd="10dp"
-                android:visibility="gone"/>
-        </FrameLayout>
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_weight="50"
-            android:layout_height="0dp"
-            tools:context=".activities.MapsActivity" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="68dp" />
-    </LinearLayout>
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-    <!-- SLIDING LAYOUT -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:orientation="vertical"
-        android:clickable="true"
-        android:focusable="true"
-        android:id="@+id/dragView">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/arrow_image"
-            android:src="@android:drawable/arrow_up_float"
-            android:layout_gravity="center_horizontal" />
-        <LinearLayout android:layout_width="match_parent"
-            android:layout_height="68dp"
-            android:weightSum="10"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="1"
-                android:layout_weight="1"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp"
-                android:padding="10dp"
-                android:textColor="#fff"
-                android:textAlignment="gravity"
-                android:background="@drawable/ic_num_marker"
-                android:layout_marginEnd="10dp"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="9"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:id="@+id/maps_name"
-                    android:text="SubLocality"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/maps_address"
-                    android:textSize="12sp"
-                    android:text="Locality"/>
-            </LinearLayout>
-        </LinearLayout>
-        <View
+            android:id="@+id/drawerimage"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:background="#b7b7b7"/>
-        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:background="@android:color/white"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_ham" />
+
+
+        <com.orbigo.custom_ui_components.DelayAutoCompleteTextView
+            android:id="@+id/maps_search_places"
             android:layout_width="match_parent"
-            android:weightSum="100"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="20"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/car_ic"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_weight="80"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/distanceTV"
-                    android:text="0 miles from your location"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/timeTV"
-                        android:text="0 hours total"/>
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height='match_parent'
-                        android:background="#b7b7b7"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$90"/>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <View
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight=".4"
+            android:background="@drawable/search_backgound"
+            android:drawableEnd="@drawable/ic_search"
+            android:drawablePadding="5dp"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:hint="Find a place"
+            android:imeOptions="flagNoExtractUi|actionSearch"
+            android:inputType="textCapSentences"
+            android:popupTheme="@style/Autocomplete" />
+
+        <ImageView
+            android:id="@+id/list_view"
+
             android:layout_width="match_parent"
-            android:layout_height='1dp'
-            android:background="#b7b7b7"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"/>
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/activity_rv" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height='1dp'
-            android:background="#b7b7b7"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:weightSum="3">
-            <android.support.v7.widget.CardView
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardCornerRadius="10dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:id="@+id/carCV"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="#04c4d7"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/car_ic"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Car"
-                        android:textSize="12sp"
-                        android:textColor="#4842f4"
-                        android:padding="10dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textAllCaps="true"/>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardCornerRadius="10dp"
-                android:layout_margin="5dp"
-                android:background="#fff"
-                android:clickable="true"
-                android:focusable="true"
-                android:orientation="vertical"
-                android:id="@+id/planeCV"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/flight_ic"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Plane"
-                        android:textSize="12sp"
-                        android:textColor="#4842f4"
-                        android:padding="10dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textAllCaps="true"/>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardCornerRadius="10dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="#fff"
-                android:clickable="true"
-                android:focusable="true"
-                android:orientation="vertical"
-                android:id="@+id/trainCV"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_train"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Train"
-                        android:textSize="12sp"
-                        android:textColor="#4842f4"
-                        android:padding="10dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textAllCaps="true"/>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Distance"
-                android:textAllCaps="false"
-                android:textColor="#b7b7b7"
-                style="?borderlessButtonStyle"
-                android:id="@+id/distance_select"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time"
-                style="?borderlessButtonStyle"
-                android:textAllCaps="false"
-                android:id="@+id/time_select"
-                android:textColor="#b7b7b7"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            android:layout_marginTop="25dp"
-            android:layout_height="wrap_content">
-            <SeekBar
-                android:layout_width="wrap_content"
-                android:layout_weight="9"
-                android:id="@+id/seekbar"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/seekbar_text"
-                android:text="10 km"
-                android:textAlignment="center"/>
-        </LinearLayout>
+            android:layout_height="match_parent"
+
+            android:layout_weight="1.3"
+            android:background="@android:color/white"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_rect" />
     </LinearLayout>
-</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+
+            <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:sothree="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/sliding_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+
+                sothree:umanoDragView="@+id/dragView"
+                sothree:umanoOverlay="true"
+                sothree:umanoPanelHeight="68dp"
+                sothree:umanoParallaxOffset="100dp"
+                sothree:umanoScrollableView="@+id/list"
+                sothree:umanoShadowHeight="4dp">
+
+
+                <!-- MAIN CONTENT -->
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient"
+                    android:focusable="true"
+                    android:orientation="vertical">
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="50">
+
+
+                        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:tools="http://schemas.android.com/tools"
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="match_parent"
+                            tools:context="com.orbigo.activities.MapsActivity" />
+
+                        <ProgressBar
+                            android:id="@+id/progress_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone" />
+
+
+                        <View
+                            android:id="@+id/fadeTop"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_gravity="top"
+
+
+                            android:background="@drawable/gradient" />
+
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="68dp" />
+
+                </LinearLayout>
+
+                <!-- SLIDING LAYOUT -->
+                <LinearLayout
+                    android:id="@+id/dragView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/layout_map_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+            </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+        </RelativeLayout>
+
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

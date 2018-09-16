@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:textColor="#000"
         android:textAppearance="?android:attr/textAppearanceLargePopupMenu"/>
 
     <TextView android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text1"
+        android:textColor="#000"
         android:layout_alignStart="@id/text1"
         android:layout_marginBottom="5dp"
         android:textAppearance="?android:attr/textAppearanceSmall"/>

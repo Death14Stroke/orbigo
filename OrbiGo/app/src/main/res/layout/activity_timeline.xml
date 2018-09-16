@@ -1,190 +1,370 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.TimelineActivity">
+    android:background="@android:color/white"
+    tools:context="com.orbigo.activities.TimelineActivity">
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
         android:src="@android:drawable/ic_menu_directions"
-        android:layout_margin="16dp" />
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/start_jrny"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/rounded_border"
+        android:fontFamily="@font/galano_grotesque"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text="Start journey"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="14dp"
+            android:rotation="90"
+            app:srcCompat="@drawable/arrow_down_gray" />
+
+        <TextView
+            android:id="@+id/tripTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/back_image"
+            android:fontFamily="@font/galano_grotesque"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Summer trip" />
+
+        <ImageView
+            android:id="@+id/add_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tripTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="23dp"
+            android:onClick="addMember"
+            app:srcCompat="@drawable/ic_plus" />
+
+
+    </RelativeLayout>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        android:background="@android:color/white"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/galano_grotesque"
+                android:text="Start"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+
+                android:layout_marginTop="10dp"
+                android:layout_weight="9"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/changeLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:text="@string/timeline_change"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/aqua_blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/mylocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/changeLocation"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:fontFamily="@font/galano_grotesque"
+                    tools:text="3th Ave Luther king, NSW. Sydney"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/your_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/galano_grotesque"
+                android:text="Your Current Location"
+                android:textColor="@color/warm_grey"
+                android:visibility="gone"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/timendate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+
+                    android:fontFamily="@font/galano_grotesque"
+                    tools:text="8am"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/changeDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:text="@string/timeline_change"
+                    android:textAllCaps="false"
+                    android:textColor="@color/aqua_blue"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
+
                 <com.github.vipulasri.timelineview.TimelineView
                     android:layout_width="wrap_content"
-                    app:markerSize="20dp"
-                    app:lineSize="3dp"
+                    android:layout_height="match_parent"
                     app:line="@color/colorPrimary"
-                    android:layout_height="match_parent" />
+                    app:lineSize="3dp"
+                    app:markerSize="20dp" />
+
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="2dp"
-                    android:layout_marginEnd="2dp"
-                    app:cardCornerRadius="5dp"
-                    android:layout_height="wrap_content">
+                    app:cardCornerRadius="5dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#b3dcbb"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:weightSum="2">
+
                             <LinearLayout
-                                android:layout_weight="1"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
                                 <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
                                     android:id="@+id/start_date_tv"
-                                    android:textSize="13sp"
-                                    android:padding="10sp"
-                                    android:text="Today"/>
-                                <Button
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Change"
+                                    android:padding="10sp"
+                                    android:text="Today"
+                                    android:textSize="13sp" />
+
+                                <Button
                                     android:id="@+id/changeStartDateBtn"
-                                    android:textStyle="bold"
-                                    android:textColor="#00c4d9"
-                                    android:textAllCaps="false"
-                                    style="?borderlessButtonStyle"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:id="@+id/start_time_tv"
-                                    android:textSize="13sp"
-                                    android:padding="10sp"
-                                    android:text="Now"/>
-                                <Button
+                                    style="?borderlessButtonStyle"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Change"
-                                    android:id="@+id/changeStartTimeBtn"
-                                    android:textStyle="bold"
-                                    android:textColor="#00c4d9"
                                     android:textAllCaps="false"
-                                    style="?borderlessButtonStyle"/>
+                                    android:textColor="#00c4d9"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/start_time_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10sp"
+                                    android:text="Now"
+                                    android:textSize="13sp" />
+
+                                <Button
+                                    android:id="@+id/changeStartTimeBtn"
+                                    style="?borderlessButtonStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Change"
+                                    android:textAllCaps="false"
+                                    android:textColor="#00c4d9"
+                                    android:textStyle="bold" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:weightSum="2"
-                            android:layout_height="wrap_content">
+                            android:weightSum="2">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
                                 <TextView
+                                    android:id="@+id/start_point_tv"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/start_point_tv"
-                                    android:textSize="13sp"
                                     android:padding="5sp"
-                                    android:text="Your location"/>
+                                    android:text="Your location"
+                                    android:textSize="13sp" />
+
                                 <Button
+                                    android:id="@+id/changeStartBtn"
+                                    style="?borderlessButtonStyle"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Change"
-                                    android:id="@+id/changeStartBtn"
-                                    android:textStyle="bold"
-                                    android:textColor="#00c4d9"
                                     android:textAllCaps="false"
-                                    style="?borderlessButtonStyle"/>
+                                    android:textColor="#00c4d9"
+                                    android:textStyle="bold" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <android.support.v7.widget.RecyclerView
+                    android:id="@+id/timelineRV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/timelineRV" />
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
                     <com.github.vipulasri.timelineview.TimelineView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        app:markerSize="20dp"
+                        app:line="@color/colorPrimary"
                         app:lineSize="3dp"
-                        app:line="@color/colorPrimary" />
+                        app:markerSize="20dp" />
+
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginEnd="2dp"
-                        app:cardCornerRadius="5dp"
-                        android:layout_height="wrap_content">
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="2dp"
+                        app:cardCornerRadius="5dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="#b3dcbb"
-                            android:weightSum="2"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:padding="10dp"
                                     android:text="Return back"
                                     android:textColor="#000"
-                                    android:textStyle="bold"
                                     android:textSize="15sp"
-                                    android:padding="10dp"/>
+                                    android:textStyle="bold" />
+
                                 <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
                                     android:id="@+id/end_dist_tv"
-                                    android:textSize="13sp"
-                                    android:padding="10sp"
-                                    android:text="Today"/>
-                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:padding="10sp"
+                                    android:text="Today"
+                                    android:textSize="13sp" />
+
+                                <TextView
                                     android:id="@+id/end_date_tv"
-                                    android:textSize="13sp"
-                                    android:padding="10sp"
-                                    android:text="Today"/>
-                                <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/end_time_tv"
-                                    android:textSize="13sp"
                                     android:padding="10sp"
-                                    android:text="Now"/>
+                                    android:text="Today"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/end_time_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10sp"
+                                    android:text="Now"
+                                    android:textSize="13sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </android.support.v7.widget.CardView>

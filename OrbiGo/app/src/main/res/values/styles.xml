@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="MyNoActionBarTheme" parent="Theme.Design.Light.NoActionBar">
@@ -28,8 +29,8 @@
         <item name="colorPrimaryDark">#000</item>
         <item name="colorAccent">#04c4d7</item>
     </style>
-
     <style name="AppTheme.NoActionBar">
+        <item name="colorPrimaryDark">@android:color/black</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -44,5 +45,48 @@
 
     <style name="InvisibleProgress">
         <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#020521</item>
+        <item name="colorPrimaryDark">#fff</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+
+
+        <item name="colorAccent">@android:color/black</item>
+
+
+    </style>
+
+    <style name="Autocomplete" parent="ThemeOverlay.AppCompat.Dark">
+
+
+        <item name="android:background">@android:color/white</item>
+
+    </style>
+
+
+    <style name="PagerTabStripText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@android:color/tab_indicator_text</item>
+       <item name="android:fontFamily">@font/galano_grotesque</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+    <item name="android:background">@drawable/bg_spinner</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/galano_grotesque</item>
+    </style>
+
+
+    <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.Light">
+
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/white</item>
+
+
     </style>
 </resources>

@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:weightSum="10"
+    android:weightSum="3"
     android:orientation="horizontal">
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_weight="4"
+        android:layout_width="100dp"
+
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
@@ -16,22 +16,27 @@
             android:textSize="13.3sp"
             android:layout_marginStart="10dp"
             android:textColor="#959595"
+            android:visibility="gone"
             android:lineSpacingExtra="9sp"
             android:text="FROM" />
         <TextView
+            android:background="@drawable/bg_white_shadow"
             android:id="@+id/from"
             android:layout_marginStart="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="?attr/borderWidth"
             android:text="12:00"
+            android:gravity="center"
+            android:padding="10dp"
             android:textSize="13sp"
             android:textColor="#000000"/>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_weight="4"
+        android:layout_marginLeft="5dp"
+
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
@@ -39,15 +44,19 @@
             android:textSize="13.3sp"
             android:layout_marginStart="10dp"
             android:textColor="#959595"
+            android:visibility="gone"
             android:lineSpacingExtra="9sp"
             android:text="TO" />
 
         <TextView
+            android:padding="10dp"
             android:id="@+id/to"
+            android:gravity="center"
             android:layout_marginStart="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="?attr/borderWidth"
+            android:background="@drawable/bg_white_shadow"
             android:text="12:00"
             android:textSize="13sp"
             android:textColor="#000000"/>
@@ -55,7 +64,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_weight="4"
         android:id="@+id/deleteTimeBtn"
         android:src="@android:drawable/ic_menu_delete"
         style="?borderlessButtonStyle" />

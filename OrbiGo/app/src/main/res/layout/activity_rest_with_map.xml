@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/scrollView_map"
-    tools:context=".activities.RestWithMapActivity">
+    tools:context="com.orbigo.activities.RestWithMapActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
             android:layout_width="match_parent"
             android:layout_height="175dp"
             android:layout_marginTop="5dp"
-            class="com.ds14.darren.orbigo.custom_ui_components.WorkaroundMapFragment"/>
+            class="com.orbigo.custom_ui_components.WorkaroundMapFragment"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"

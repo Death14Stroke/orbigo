@@ -5,33 +5,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.TouristProfileActivity">
+
+    android:background="@android:color/white"
+    tools:context="com.orbigo.activities.BusinessProfileActivity">
     <LinearLayout
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_margin="20dp"
-                android:layout_weight="40"
-                android:src="@drawable/ic_person"
-                app:civ_border_color="#000"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+
+                android:layout_below="@+id/close"
+                android:src="@drawable/ic_switch_to_business"
+                app:civ_border_color="#ebebeb"
+                app:civ_fill_color="#ebebeb"
+
                 app:civ_border_width="2dp" />
+
             <TextView
                 android:id="@+id/name"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="User"
+                android:layout_alignTop="@+id/profile_image"
                 android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@+id/profile_image"
+                android:fontFamily="@font/galano_grotesque"
+                android:text="User"
                 android:textColor="#000000"
-                android:textSize="20sp"/>
-        </LinearLayout>
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:onClick="onBackPress"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/ic_close" />
+
+            <TextView
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@+id/profile_image"
+                android:fontFamily="@font/galano_grotesque"
+                android:visibility="invisible"
+                android:text="@string/busine_profile_edit_profile"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/tnotification"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignBottom="@+id/edit"
+                android:layout_alignEnd="@+id/close"
+                app:srcCompat="@drawable/ic_alertbell" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignBottom="@+id/edit"
+
+                android:layout_toStartOf="@+id/tnotification"
+                app:srcCompat="@drawable/ic_message" />
+
+
+        </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/captureImageBtn"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:src="@android:drawable/ic_menu_camera"
                 style="?borderlessButtonStyle"/>
             <ImageButton
@@ -49,6 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:src="@android:drawable/ic_menu_gallery"
                 style="?attr/borderlessButtonStyle" />
 
@@ -56,6 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
+                android:visibility="gone"
                 android:id="@+id/notification"
                 style="?attr/borderlessButtonStyle"
                 android:src="@drawable/ic_notification"
@@ -64,7 +126,7 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height=".2dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
@@ -74,102 +136,149 @@
             android:paddingEnd="10dp"
             android:textAlignment="textStart"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
+            android:layout_height="60dp"
+            android:textColor="@color/warm_grey"
+            android:drawablePadding="10dp"
             android:textAllCaps="false"
-            android:text="Profile"
+            android:text="@string/busine_profile_profile"
+            android:textSize="18sp"
+            android:fontFamily="@font/galano_grotesque"
             android:id="@+id/profile"
             style="?borderlessButtonStyle"
-            android:drawableStart="@drawable/ic_person" />
+            android:drawableStart="@drawable/ic_profile" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height=".5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="#b7b7b7"/>
         <Button
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:textAlignment="textStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000"
+            style="?borderlessButtonStyle"
             android:textAllCaps="false"
-            android:text="Business plus"
+            android:drawableStart="@drawable/ic_trips"
+            android:text="Trips"
+            android:paddingStart="10dp"
+            android:drawablePadding="10dp"
+            android:id="@+id/trips"
+            android:textSize="18sp"
+            android:fontFamily="@font/galano_grotesque"
+            android:paddingEnd="10dp"
+            android:textAlignment="textStart"
+            android:visibility="gone"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#b7b7b7"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textColor="@color/warm_grey"
+            style="?borderlessButtonStyle"
+            android:textAllCaps="false"
+            android:drawableStart="@drawable/ic_saved"
+            android:text="Saved"
+            android:visibility="gone"
+            android:paddingStart="10dp"
+            android:drawablePadding="10dp"
+            android:id="@+id/Saved"
+            android:textSize="18sp"
+            android:fontFamily="@font/galano_grotesque"
+            android:paddingEnd="10dp"
+            android:textAlignment="textStart" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#b7b7b7"/>
+        <Button
+            android:paddingStart="18dp"
+            android:paddingEnd="10dp"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textColor="#8e6ef9"
+            android:textAllCaps="false"
+            android:text="@string/business_profile_accounts"
+            android:textSize="18sp"
+            android:fontFamily="@font/galano_grotesque"
+            android:drawablePadding="20dp"
             android:id="@+id/business_plus"
             style="?borderlessButtonStyle"
-            android:drawableStart="@drawable/ic_b_plus"/>
+
+            android:drawableStart="@drawable/ic_add_black_24dp"/>
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height=".5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="#b7b7b7"/>
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
+            android:layout_height="60dp"
+            android:textColor="@color/warm_grey"
             android:textAllCaps="false"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
+            android:drawablePadding="12dp"
             android:textAlignment="textStart"
-            android:text="Settings"
-            android:id="@+id/setting"
-            style="?borderlessButtonStyle"
-            android:drawableStart="@drawable/ic_setting"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="#b7b7b7"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            style="?borderlessButtonStyle"
-            android:textAllCaps="false"
-            android:drawableStart="@drawable/ic_switch_t"
-            android:text="Switch to tourist"
-            android:paddingStart="10dp"
-            android:id="@+id/switchToTourist"
-            android:paddingEnd="10dp"
-            android:textAlignment="textStart" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="#b7b7b7"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            style="?borderlessButtonStyle"
-            android:textAllCaps="false"
-            android:drawableStart="@android:drawable/ic_menu_share"
-            android:text="Invite friends"
-            android:paddingStart="10dp"
+            android:text="@string/busine_profile_settings"
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:fontFamily="@font/galano_grotesque"
             android:id="@+id/shareOrbiGo"
-            android:paddingEnd="10dp"
-            android:textAlignment="textStart" />
+            style="?borderlessButtonStyle"
+            android:drawableStart="@drawable/ic_settings"/>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height=".5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="#b7b7b7"/>
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:textColor="@color/warm_grey"
+            style="?borderlessButtonStyle"
+            android:textAllCaps="false"
+            android:drawableStart="@drawable/ic_map_filter"
+            android:text="@string/busine_profile_switch_to_tourist"
+            android:paddingStart="12dp"
+            android:id="@+id/switchToTourist"
+            android:drawablePadding="12dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/galano_grotesque"
+            android:paddingEnd="10dp"
+            android:textAlignment="textStart" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#b7b7b7"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:textColor="#000000"
             android:id="@+id/logout_click"
             style="?borderlessButtonStyle"
             android:textAllCaps="false"
-            android:paddingStart="10dp"
+            android:drawablePadding="10dp"
+
+            android:paddingStart="22dp"
             android:paddingEnd="10dp"
             android:textAlignment="textStart"
-            android:drawableStart="@drawable/ic_logout"
-            android:text="Logout" />
+            android:textSize="18sp"
+            android:fontFamily="@font/galano_grotesque"
+            android:text="@string/busine_profile_logout" />
+        <!--android:drawableStart="@drawable/ic_logout"-->
     </LinearLayout>
 </ScrollView>

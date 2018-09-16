@@ -3,12 +3,15 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.ds14.darren.orbigo"
+        applicationId "com.orbigo"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+
+        android.getDefaultConfig().vectorDrawables.useSupportLibrary = true
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -26,6 +29,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
     implementation 'com.google.firebase:firebase-messaging:17.0.0'
     implementation 'com.android.support:support-vector-drawable:27.1.1'
     testImplementation 'junit:junit:4.12'
@@ -36,13 +40,18 @@ dependencies {
     implementation 'com.facebook.android:facebook-login:4.33.0'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.volley:volley:1.1.0'
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.vipulasri:timelineview:1.0.6'
     implementation 'com.google.android.gms:play-services-location:15.0.1'
     implementation 'com.karumi:dexter:4.2.0'
     implementation 'com.coderconsole.cextracter:contact-extractor:1.0.0'
     implementation 'com.google.android.gms:play-services-places:15.0.1'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.4+'
 }
 
 apply plugin: 'com.google.gms.google-services'

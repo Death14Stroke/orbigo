@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="aqua_blue">#04c4d7</color>
+    <color name="grey">#b7b7b7</color>
+    <color name="aqua">#04c4d7</color>
+    <color name="greyish">#b7b7b7</color>
+    <!--Client Color codes -->
+    <color name="warm_grey">#959595</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
 </resources>

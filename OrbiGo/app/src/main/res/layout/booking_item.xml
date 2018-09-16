@@ -13,7 +13,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="9"
-            android:orientation="vertical">
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/name_of_businessman"
                 android:layout_width="wrap_content"
@@ -32,6 +33,7 @@
                 android:textColor="#088886"
                 android:text="(ask for phone number)"
                 android:textSize="12sp"/>
+
         </LinearLayout>
         <ImageButton
             android:id="@+id/moreDetailsBooking"
@@ -47,7 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:visibility="visible"
         android:id="@+id/booking_details_ll">
         <View
             android:layout_marginBottom="5dp"
@@ -61,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="#000000"
+            android:textColor="#898989"
             android:layout_marginStart="10dp"
             android:textStyle="bold"
             android:text="People"
@@ -78,15 +81,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:textColor="#959595"
                     android:padding="5dp"
                     android:text="ADULT" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:padding="5dp"
+                    android:background="@drawable/bg_white_shadow"
                     android:id="@+id/adult_number"
                     android:text="6"
                     />
@@ -99,16 +103,17 @@
                     android:layout_marginStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:textColor="#959595"
                     android:padding="5dp"
                     android:text="CHILDREN"
                     />
                 <TextView
                     android:layout_marginStart="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:padding="5dp"
+                    android:background="@drawable/bg_white_shadow"
                     android:id="@+id/children_number"
                     android:text="1"/>
             </LinearLayout>
@@ -117,6 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="5dp"
             android:background="#b7b7b7"/>
@@ -125,6 +131,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textColor="#898989"
+            android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
             android:text="Arrival"
@@ -132,9 +139,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="11sp"
             android:textColor="#959595"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:text="AROUND"
             />
@@ -142,9 +149,9 @@
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textColor="#363636"
             android:text="17 Jan 2018"
             />
@@ -168,10 +175,14 @@
             android:background="#b7b7b7"/>
         <Button
             android:id="@+id/confirm"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Confirm"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="5dp"
             android:textAllCaps="false"
             android:textColor="#fff"

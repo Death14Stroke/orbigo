@@ -10,7 +10,8 @@
         android:padding="10dp"
         android:id="@+id/spinner_tripName"
         android:textColor="#000"
-        android:textSize="14sp"/>
+        android:fontFamily="@font/galano_grotesque"
+        android:textSize="18sp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:paddingStart="10dp"
@@ -21,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#585757"
-            android:textSize="13sp"
+            android:textSize="14sp"
+            android:fontFamily="@font/galano_grotesque"
             android:textStyle="bold"
             android:text="Created:"/>
         <TextView
@@ -30,6 +32,7 @@
             android:id="@+id/spinner_tripCreated"
             android:textColor="#b7b7b7"
             android:textSize="12sp"
+            android:fontFamily="@font/galano_grotesque"
             android:layout_marginStart="10dp"
             android:text="17 Jan 2018"/>
     </LinearLayout>

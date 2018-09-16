@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to trip"
+        android:textColor="@color/aqua_blue"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/galano_grotesque"
+        android:textStyle="bold"/>
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,14 +24,65 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OR"
+        android:fontFamily="@font/galano_grotesque"
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
         android:padding="10dp"
         android:layout_gravity="center_horizontal"/>
     <EditText
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/aqua_blue"
         android:hint="Enter a new trip name"
+        android:fontFamily="@font/galano_grotesque"
+        android:textColor="@color/aqua_blue"
         android:id="@+id/new_trip_name"
         android:inputType="text"/>
+    <!--<LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <TextView
+            android:id="@+id/add_to_new"
+            android:layout_weight=".9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/galano_grotesque"
+            android:textColor="@color/aqua_blue"
+            android:text="ADD TO NEW TRIP"/>
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:fontFamily="@font/galano_grotesque"
+            android:textColor="@color/aqua_blue"
+
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:fontFamily="@font/galano_grotesque"
+            android:textColor="@color/aqua_blue"
+            android:paddingRight="40dp"
+            android:gravity="right"/>
+
+
+
+
+
+
+    </LinearLayout>-->
+
 </LinearLayout>

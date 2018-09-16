@@ -3,15 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".activities.ListBusinessActivity">
+    android:background="@color/white"
+    tools:context="com.orbigo.activities.ListBusinessActivity">
+
+    <RelativeLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:layout_marginBottom="5dp">
+
+        <ImageView
+            android:id="@+id/drawerimage"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/arrow_down_gray"
+            android:rotation="90"
+            android:onClick="onBackPress"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/white"
+            />
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_width="35dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="56dp"
+            android:onClick="onCrossClicked"
+            android:layout_gravity="end"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_close" />
+    </RelativeLayout>
 
     <TextView
         android:layout_marginTop="40dp"
         android:layout_marginStart="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="#000000"
         android:lineSpacingExtra="-16.5sp"

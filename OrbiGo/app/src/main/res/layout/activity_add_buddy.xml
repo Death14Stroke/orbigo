@@ -2,67 +2,112 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@android:color/white"
     android:layout_height="match_parent"
-    tools:context=".activities.AddBuddyActivity">
+    tools:context="com.orbigo.activities.AddBuddyActivity">
+
+
+    <ImageView
+        android:id="@+id/back_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="finish"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/buddy_name"
+        android:layout_marginTop="14dp"
+        android:rotation="90"
+        app:srcCompat="@drawable/arrow_down_gray" />
+
+
     <TextView
+        android:id="@+id/travelBuddyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/back_image"
+        android:layout_alignTop="@+id/back_image"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="65dp"
+        android:fontFamily="@font/galano_grotesque"
+        android:padding="3dp"
         android:text="Add Travel buddy"
         android:textColor="#000"
-        android:id="@+id/travelBuddyText"
-        android:textStyle="bold"
-        android:textSize="23sp"
-        android:layout_margin="10dp"
-        android:padding="3dp"/>
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sync contact"
-        android:textColor="#02b8d0"
         android:id="@+id/contact_btn"
-        android:layout_margin="10dp"
-        android:textAllCaps="false"
-        android:layout_alignParentEnd="true"
-        style="?borderlessButtonStyle" />
-    <EditText
-        android:layout_width="match_parent"
-        android:inputType="text"
-        android:padding="10dp"
-        android:layout_below="@id/travelBuddyText"
-        android:id="@+id/buddy_name"
-        android:layout_margin="15dp"
-        android:layout_height="wrap_content"
-        android:hint="Full name"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:padding="10dp"
-        android:layout_below="@id/buddy_name"
-        android:id="@+id/buddy_email"
-        android:inputType="textEmailAddress"
-        android:hint="Email"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:padding="10dp"
-        android:layout_below="@id/buddy_email"
-        android:id="@+id/buddy_phone"
-        android:layout_margin="15dp"
-        android:hint="Phone number(optional)"/>
-    <Button
+        style="?borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Guest"
-        android:layout_marginTop="10dp"
-        android:id="@+id/buddy_add_btn"
-        android:layout_below="@id/buddy_phone"
+        android:layout_alignBaseline="@+id/travelBuddyText"
+
+        android:layout_alignBottom="@+id/travelBuddyText"
+        android:layout_alignEnd="@+id/buddy_name"
+        android:fontFamily="@font/galano_grotesque"
+        android:text="Sync contact"
         android:textAllCaps="false"
+        android:textColor="#02b8d0" />
+
+    <EditText
+
+        android:id="@+id/buddy_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/contact_btn"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/warm_grey"
+        android:fontFamily="@font/galano_grotesque"
+        android:hint="Full name"
+        android:inputType="text"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/buddy_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_alignStart="@+id/buddy_name"
+        android:layout_below="@+id/buddy_name"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/warm_grey"
+        android:fontFamily="@font/galano_grotesque"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/buddy_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/buddy_email"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/warm_grey"
+        android:fontFamily="@font/galano_grotesque"
+        android:hint="Phone number(optional)"
+        android:inputType="phone"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/buddy_add_btn"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/buddy_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+
         android:background="@drawable/rounded_border"
-        android:textColor="#fff"
+        android:fontFamily="@font/galano_grotesque"
         android:paddingEnd="20dp"
         android:paddingStart="20dp"
-        android:layout_centerHorizontal="true" />
+        android:text="Add Guest"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
 </RelativeLayout>

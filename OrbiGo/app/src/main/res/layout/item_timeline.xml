@@ -1,123 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <com.github.vipulasri.timelineview.TimelineView
-        android:id="@+id/time_marker"
-        android:layout_width="wrap_content"
+    android:layout_height="160dp">
+
+    <View
+        android:layout_width="6px"
         android:layout_height="match_parent"
-        app:markerSize="20dp"
-        app:lineSize="3dp"
-        app:line="@color/colorPrimary"/>
-    <android.support.v7.widget.CardView
+        android:layout_marginLeft="12dp"
+        android:background="@color/grey" />
+
+
+    <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_gravity="center_vertical"
-        app:cardElevation="2dp"
-        app:contentPadding="2dp">
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+
+        <RelativeLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:src="@drawable/ic_marker_gray" />
+
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                tools:text="66" />
+        </RelativeLayout>
+
+        <!--<com.github.vipulasri.timelineview.TimelineView-->
+        <!--android:id="@+id/time_marker"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--app:line="#e1e1e1"-->
+
+
+        <!--app:linePadding="-5dp"-->
+        <!--app:lineSize="3dp"-->
+        <!--app:markerSize="30dp" />-->
+        <!--<android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_vertical"
+
+            app:cardCornerRadius="5dp"
+            >-->
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="10"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="35dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
             <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+
+                android:layout_width="140dp"
+                android:layout_height="120dp">
+
                 <ImageView
                     android:id="@+id/day_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher_background" />
+                    app:srcCompat="@drawable/ic_launcher_background" />
+
                 <TextView
+                    android:id="@+id/orderTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="#040d3d"
-                    android:textStyle="bold"
-                    android:id="@+id/orderTV"
                     android:layout_gravity="end"
-                    android:padding="8dp"
+                    android:background="@drawable/circular_border"
                     android:fontFamily="monospace"
+                    android:padding="8dp"
+                    tools:text="1"
+                    android:textColor="#040d3d"
                     android:textSize="22sp"
-                    android:background="@drawable/circular_border"/>
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    app:srcCompat="@drawable/ic_outlinefavorite_border" />
             </FrameLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
+
                 android:orientation="vertical">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/day_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    tools:text="8:00 am"
                     android:textColor="#000"
-                    android:padding="3dp"
                     android:textSize="14sp"
-                    android:text="8:00 am" />
+                    android:visibility="gone" />
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/day_place_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/galano_grotesque"
+                    tools:text="China town"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textColor="#000"
-                    android:padding="3dp"
-                    android:textStyle="bold"
                     android:textSize="16sp"
-                    android:text="China town" />
+                    android:textStyle="bold" />
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/day_place_region"
-                    android:textSize="16sp"
-                    android:padding="3dp"
-                    android:textAllCaps="true"
-                    android:text="NSW" />
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="3dp"
-                    android:text="12 miles from your latlng"
-                    android:id="@+id/day_miles"/>
+                    android:fontFamily="@font/galano_grotesque"
+                    tools:text="NSW"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:padding="3dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/day_miles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:textColor="@color/black"
+                        android:text="12" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:textColor="@color/black"
+                        android:text="@string/timline_miles2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="@string/timline_from_your_location" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
                         android:id="@+id/day_hours"
-                        android:text="2.5 hours total"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:textColor="@color/black"
+                        tools:text="2.5" />
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/timline_hours_total" />
+
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
-                        android:background="#7d7676"/>
+                        android:layout_marginStart="5dp"
+                        android:background="#7d7676"
+                        android:fontFamily="@font/galano_grotesque" />
+
                     <TextView
+                        android:id="@+id/day_per_person"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/day_per_person"
-                        android:textColor="#000"
-                        android:text="$40"/>
+                        android:fontFamily="@font/galano_grotesque"
+                        tools:text="$40"
+                        android:textColor="#000" />
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/galano_grotesque"
+                        android:layout_marginLeft="5dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="@string/timline_per_person" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/day_cat_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAllCaps="true"
-                    android:textColor="#01bcb4"
-                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/textview_border"
-                    android:text="Attraction" />
+                    android:fontFamily="@font/galano_grotesque"
+                    android:padding="5dp"
+                    tools:text="Attraction"
+                    android:textAllCaps="true"
+                    android:textColor="#01bcb4" />
             </LinearLayout>
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+        <!-- </android.support.v7.widget.CardView>-->
 
-</LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/cirle_blu"
+            android:padding="7dp"
+            android:src="@drawable/ic_car_front_view_white" />
+
+        <TextView
+            android:id="@+id/tv_dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            tools:text="30"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="@string/timline_miles"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            tools:text="30" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="@string/timeline_min" />
+
+    </LinearLayout>
+</RelativeLayout>

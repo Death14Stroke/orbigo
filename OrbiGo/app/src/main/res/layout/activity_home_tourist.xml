@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/home_ll"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.orbigo.activities.HomeTouristActivity">
+    <LinearLayout
+        android:id="@+id/content_frame"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        >
+
+    <ImageView
+        android:id="@+id/drawerimage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:srcCompat="@drawable/ic_ham" />
+    </LinearLayout>
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="46.7sp"
+        android:textColor="#000000"
+        android:letterSpacing="-0.01"
+        tools:text="Start New Journey"
+        />-->
+
+
+
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/logo"
+        android:visibility="visible"
+        tools:visibility="gone"
+
+        />
+
+
+    <LinearLayout
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+
+
+
+    <TextView
+        android:id="@+id/textView1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/galano_grotesque"
+        android:gravity="center_horizontal"
+
+        android:text="@string/start_new_journey"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galano_grotesque"
+        android:gravity="center_horizontal"
+        android:text="@string/where_will_your_next_adventure_be"
+        android:textColor="#898989"
+        android:textSize="16sp" />
+
+    <com.orbigo.custom_ui_components.DelayAutoCompleteTextView
+        android:layout_gravity="center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:id="@+id/home_search_places"
+        android:inputType="textCapSentences"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:drawablePadding="10dp"
+        android:background="@drawable/search_backgound"
+        android:drawableStart="@drawable/ic_search"
+        android:drawableEnd="@drawable/ic_arrow_blue"
+        android:layout_height="45dp"
+        android:hint="@string/looking_for_an_attraction"
+        android:popupTheme="@style/Autocomplete"
+        android:elevation="5dp"
+        android:imeOptions="flagNoExtractUi|actionSearch"/>
+
+   <!-- <FrameLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        >
+     com.orbigo.custom_ui_componentsents.DelayAutoCompleteTextView
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/home_search_places"
+            android:inputType="textCapSentences"
+            android:layout_width="match_parent"
+            android:visibility="invisible"
+
+            android:background="@drawable/search_backgound"
+            android:drawableStart="@drawable/search_ic"
+            android:layout_height="40dp"
+            android:hint="@string/looking_for_an_attraction"
+
+            android:popupTheme="@style/Autocomplete"
+            android:elevation="5dp"
+            android:imeOptions="flagNoExtractUi|actionSearch"/>
+       &lt;!&ndash; <ProgressBar
+            android:id="@+id/pb_loading_indicator"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"/>&ndash;&gt;
+    </FrameLayout>-->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:weightSum="99"
+        android:layout_marginTop="10dp">
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/home_local_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="33"
+            android:clickable="true"
+            android:elevation="3dp"
+            android:focusable="true"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:padding="20dp"
+                    android:id="@+id/thumbnail"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+
+                    android:src="@drawable/locationwhitetranparent" />
+
+                <TextView
+                    android:id="@+id/local"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:gravity="center_horizontal"
+                    android:text="Local" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/home_country_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="33"
+            android:clickable="true"
+            android:elevation="3dp"
+            android:focusable="true"
+            app:cardCornerRadius="20dp"
+           >
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:padding="20dp"
+                    android:id="@+id/thumbnail2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:backgroundTint="@android:color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_local" />
+
+                <TextView
+                    android:id="@+id/country_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:gravity="center_horizontal"
+                    android:text="My Country" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/home_world_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="33"
+            android:clickable="true"
+            android:elevation="3dp"
+            android:focusable="true"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/thumbnailworld"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:paddingTop="20dp"
+                    android:paddingLeft="-5dp"
+                    android:paddingRight="-5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/world2"
+                     />
+
+                <TextView
+                    android:id="@+id/world"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/galano_grotesque"
+                    android:gravity="center_horizontal"
+                    android:text="International" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/discoverBtn"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:drawableEnd="@drawable/ic_arrow_blue"
+        android:fontFamily="@font/galano_grotesque"
+        android:text="Discover"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#04c4d7"
+        android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/loading"
+        android:layout_alignParentStart="true"
+        android:indeterminate="true"
+        tools:visibility="gone"
+        android:visibility="visible"/>
+
+
+
+    <TextView
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Loading destinations..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible"/>
+
+
+
+
+
+</RelativeLayout>

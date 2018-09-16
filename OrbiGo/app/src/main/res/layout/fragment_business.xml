@@ -1,78 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BusinessFragment"
     android:animateLayoutChanges="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.orbigo.fragments.BusinessFragment">
 
     <LinearLayout
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:weightSum="10"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="29.8sp"
-            android:layout_weight="9"
-            android:textStyle="bold"
+            android:layout_weight="0.8"
+            android:fontFamily="@font/galano_grotesque"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="-7.5sp"
+            android:text="@string/business"
             android:textColor="#000000"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="-7.5sp"
-            android:text="Business"
-            />
+            android:textSize="18sp"
+
+            android:textStyle="bold" />
+
         <TextView
-            android:layout_marginStart="50dp"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="10dp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:textSize="29.8sp"
             android:id="@+id/businessCount"
-            android:textColor="#8e6ef9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_weight="0.2"
+            android:gravity="right"
+            android:fontFamily="@font/galano_grotesque"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="-7.5sp"
-            android:text="0"
-            />
+            android:textColor="#8e6ef9"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="right"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="3.3sp"
+            android:text="@string/busines_edit"
+            android:visibility="gone"
+            android:textColor="#02b8d0"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
     <View
-        android:layout_marginTop="5dp"
+        android:id="@+id/view4"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="20dp"
+        android:layout_height="1px"
+        android:layout_below="@+id/title"
         android:layout_marginEnd="20dp"
-        android:background="#b7b7b7"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#b7b7b7" />
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/newBusinessBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/galano_grotesque"
+        android:padding="5dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="@string/business_list_new_business"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="25dp"
+        android:textColor="#04c4d7" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/businessListRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="10"
-        android:orientation="vertical">
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="9"
-            android:id="@+id/businessListRV" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="List New Business"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_border"
-            android:padding="5dp"
-            android:layout_marginBottom="20dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:id="@+id/newBusinessBtn"
-            android:textColor="#fff"
-            android:textAllCaps="false"
-            android:layout_gravity="center_horizontal|bottom"/>
-    </LinearLayout>
-</LinearLayout>
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_above="@id/newBusinessBtn"
+        android:layout_below="@+id/view4"
+        android:layout_marginTop="20dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nearby_poi_card"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        app:cardCornerRadius="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:weightSum="2">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/poi_image"
+                android:scaleType="fitXY"
+
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_launcher_background" />
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/poi_like_btn"
+                android:foregroundGravity="right"
+                app:srcCompat="@drawable/ic_outlinefavorite_border"
+                android:background="@android:color/transparent"
+                android:layout_gravity="end"/>
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:fontFamily="@font/galano_grotesque"
+                android:textColor="#000000"
+                android:id="@+id/poi_name"
+                android:text="China town" />
+            <!-- <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="nsw"
+                 android:padding="5dp"
+                 android:textSize="14sp"
+                 android:id="@+id/poi_area"
+                 android:textColor="#898989"
+                 android:textAllCaps="true" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#363636"
+                android:layout_marginTop="5dp"
+
+                android:id="@+id/poi_distance"
+                android:text="12 miles from your latlng" />
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:id="@+id/poi_time"
+                    android:textColor="#363636"
+
+                    android:text="2.5 hours total"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#b7b7b7"
+                    android:layout_margin="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#363636"
+                    android:text="$40"
+                    android:id="@+id/poi_cost"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attraction"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:fontFamily="@font/galano_grotesque"
+                android:textColor="#01bcb4"
+                android:id="@+id/poi_type"
+                android:background="@drawable/textview_border"
+                android:textAllCaps="true"/>
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content"
+            style="?borderlessButtonStyle"
+            android:id="@+id/poi_add_btn"
+            app:srcCompat="@drawable/ic_plus"/>
+    </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+</RelativeLayout>
